@@ -1,0 +1,12 @@
+# Plain static site: no install and no build step, so each deploy takes seconds and costs almost nothing.
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "static site, nothing to build"
+  artifacts:
+    baseDirectory: /
+    files:
+      - index.html
+      - favicon.svg
