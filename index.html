@@ -75,7 +75,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .hero .what{margin:36px 0 0;padding-top:22px;border-top:1px solid rgba(221,189,194,.3);max-width:600px;font-size:21px;line-height:1.45;color:var(--rose)}
 .hero .what b{color:var(--bone)}
 .hero .ctas{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
-.hero .note{margin-top:14px;font-size:14px;color:var(--dim)}
+.hero .note{margin-top:16px;font-size:15px;color:var(--rose)}
+.hero .note a{color:var(--bone)}
 
 /* problem */
 .problem{background:var(--bg)}
@@ -143,7 +144,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .road{grid-template-columns:1fr;gap:28px}
   .road::before{left:9px;right:auto;top:0;bottom:0;width:2px;height:auto;background:linear-gradient(180deg,var(--crimson),var(--amber))}
   .stop{padding:0 0 0 40px}
-  .navlinks a:not(.btn){display:none}
+  .navlinks a[href^="#"]{display:none}
 }
 @media (max-width:520px){.quotes{grid-template-columns:1fr}.stat{padding:28px 24px}}
 </style>
@@ -161,7 +162,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <a href="#how">How it works</a>
       <a href="#next">Roadmap</a>
       <a href="#demo" data-play>Watch the demo</a>
-      <a class="btn btn-ghost" href="https://aws.d32tnuo1sla34.amplifyapp.com/vault">Log in</a>
+      <a href="https://aws.d32tnuo1sla34.amplifyapp.com/vault">Log in</a>
+      <a class="btn btn-ghost" href="https://aws.d32tnuo1sla34.amplifyapp.com/api/auth/login?signup=1&amp;next=/vault">Sign up</a>
     </div>
   </div>
 </nav>
@@ -198,8 +200,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p class="what"><b>The AI Apprentice</b> watches experts work, asks why at the right moment, and teaches what they know to the next generation.</p>
       <div class="ctas">
         <a class="btn btn-amber" href="#demo" data-play>▶ Watch the demo</a>
-        <a class="btn btn-ghost" href="https://aws.d32tnuo1sla34.amplifyapp.com/vault">Log in</a>
+        <a class="btn btn-ghost" href="https://aws.d32tnuo1sla34.amplifyapp.com/api/auth/login?signup=1&amp;next=/vault">Sign up</a>
       </div>
+      <p class="note">Already have an account? <a href="https://aws.d32tnuo1sla34.amplifyapp.com/vault">Log in</a></p>
     </div>
   </div>
 </header>
@@ -302,10 +305,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section class="cta">
   <div class="wrap">
     <h2>Keep what your experts know <em>before they go.</em></h2>
-    <p>We're working with a small group of pilot teams. Already one of them? Log in to your workflow vault.</p>
+    <p>Create an account and record your first workflow today. Already using TorchBearer? Log in to your workflow vault.</p>
     <div class="ctas">
-      <a class="btn btn-amber" href="https://aws.d32tnuo1sla34.amplifyapp.com/vault">Log in →</a>
-      <a class="btn btn-ghost" href="#demo" data-play>▶ Watch the demo</a>
+      <a class="btn btn-amber" href="https://aws.d32tnuo1sla34.amplifyapp.com/api/auth/login?signup=1&amp;next=/vault">Sign up →</a>
+      <a class="btn btn-ghost" href="https://aws.d32tnuo1sla34.amplifyapp.com/vault">Log in</a>
     </div>
   </div>
 </section>
