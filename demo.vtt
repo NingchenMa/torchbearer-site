@@ -1,0 +1,65 @@
+WEBVTT
+
+00:00.800 --> 00:04.800
+TorchBearer is an AI apprentice that captures how experts really work,
+
+00:04.800 --> 00:09.840
+maps it, and teaches it to the next person. First, in the capture step, the expert works
+
+00:09.840 --> 00:15.200
+as usual while TorchBearer watches, and at natural pauses, an ElevenLabs voice agent
+
+00:15.200 --> 00:20.320
+asks about the reasoning behind each step. Why this step? Is there a limit? When would you
+
+00:20.320 --> 00:24.480
+stop and ask someone? The expert just talks through it the way they would explain it to a new
+
+00:24.480 --> 00:30.320
+colleague. Let's take a look. I'm going to launch it right now and tell it that we're going to do a
+
+00:30.320 --> 00:38.560
+food expense learning today. And then I share the entire screen and it starts to capture.
+
+00:40.960 --> 00:46.560
+Hi Paul, I'm TorchBearer. Go ahead and show me how you submit your expenses. I'll stay quiet
+
+00:46.560 --> 00:52.720
+and only ask when you pause. Does the system always split costs equally when adding a guest?
+
+00:52.720 --> 00:58.080
+Originally it does, but you can adjust the percentages yourself.
+
+01:00.400 --> 01:02.320
+Understood. You can adjust it.
+
+01:04.480 --> 01:09.280
+When the expert finishes, TorchBearer then explains the whole process back in its own words,
+
+01:09.280 --> 01:14.320
+and the expert corrects anything you got wrong until it's right. The result is a Work Map.
+
+01:14.320 --> 01:20.000
+Every step, rule, and guardrail linked to the exact screen moment and the expert's own words.
+
+01:20.320 --> 01:25.600
+New hires then get coached by TorchBearer on this workflow or any recorded before it. It asks them
+
+01:25.600 --> 01:29.920
+to predict the next step, gives them hints when they're stuck, and stops them before they break
+
+01:29.920 --> 01:34.720
+a guardrail, explaining why in the expert's own words. Based on what you saw earlier,
+
+01:34.720 --> 01:45.760
+what do you need besides the receipt? An invoice? That's a good thought, but for delivery orders,
+
+01:45.840 --> 01:52.080
+Paul always makes sure to include something else. Think about what confirms the delivery itself.
+
+01:53.200 --> 01:54.480
+A delivery confirmation?
+
+01:56.240 --> 02:02.080
+Spot on! A delivery confirmation is exactly what Paul includes for these types of orders.
+

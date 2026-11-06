@@ -105,6 +105,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .step p{margin:18px 0 0;color:var(--text-2);font-size:16.5px}
 .step p b{color:var(--text)}
 
+/* demo */
+.demo{background:var(--bg)}
+.player{margin-top:48px;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:#000;box-shadow:0 24px 60px rgba(42,7,14,.18);aspect-ratio:16/9}
+.player video{display:block;width:100%;height:100%}
+.chapters{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chapters button{font:inherit;font-size:15px;font-weight:700;color:var(--text);background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+.chapters button:hover{border-color:var(--crimson)}
+
 /* roadmap */
 .road{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
 .road::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:linear-gradient(90deg,var(--crimson),var(--amber))}
@@ -152,7 +160,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <a href="#problem">Why</a>
       <a href="#how">How it works</a>
       <a href="#next">Roadmap</a>
-      <a class="btn btn-ghost" href="https://aws.d32tnuo1sla34.amplifyapp.com/capture">Open the app</a>
+      <a href="#demo" data-play>Watch the demo</a>
+      <a class="btn btn-ghost" href="https://aws.d32tnuo1sla34.amplifyapp.com/vault">Log in</a>
     </div>
   </div>
 </nav>
@@ -188,8 +197,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p class="tag">We pass on the torch.</p>
       <p class="what"><b>The AI Apprentice</b> watches experts work, asks why at the right moment, and teaches what they know to the next generation.</p>
       <div class="ctas">
-        <a class="btn btn-amber" href="https://aws.d32tnuo1sla34.amplifyapp.com/capture">Try the demo →</a>
-        <a class="btn btn-ghost" href="#how">See how it works</a>
+        <a class="btn btn-amber" href="#demo" data-play>▶ Watch the 2-minute demo</a>
+        <a class="btn btn-ghost" href="https://aws.d32tnuo1sla34.amplifyapp.com/vault">Log in</a>
       </div>
     </div>
   </div>
@@ -256,6 +265,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
+<section class="demo" id="demo">
+  <div class="wrap">
+    <div class="eyebrow">See it in action</div>
+    <h2>Two minutes, <em>start to finish.</em></h2>
+    <p class="lead">An expert records a meal expense while TorchBearer asks why. Then a new hire practises the same task with the voice tutor.</p>
+    <div class="player">
+      <video id="demo-video" controls preload="metadata" playsinline poster="demo-poster.jpg" aria-label="TorchBearer product demo">
+        <source src="demo.mp4" type="video/mp4">
+        <track kind="captions" src="demo.vtt" srclang="en" label="English">
+        Your browser can't play this video. <a href="demo.mp4">Download it</a>.
+      </video>
+    </div>
+    <ol class="chapters" aria-label="Jump to a part of the demo">
+      <li><button type="button" data-t="0">0:00 What it is</button></li>
+      <li><button type="button" data-t="25">0:25 Capture</button></li>
+      <li><button type="button" data-t="64">1:04 Work Map</button></li>
+      <li><button type="button" data-t="80">1:20 Teach</button></li>
+    </ol>
+  </div>
+</section>
+
 <section id="next">
   <div class="wrap">
     <div class="eyebrow">Roadmap</div>
@@ -272,9 +302,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section class="cta">
   <div class="wrap">
     <h2>Keep what your experts know <em>before they go.</em></h2>
-    <p>We're working with a small group of pilot teams. Try the demo, or reach out to bring TorchBearer to yours.</p>
+    <p>We're working with a small group of pilot teams. Already one of them? Log in to your workflow vault.</p>
     <div class="ctas">
-      <a class="btn btn-amber" href="https://aws.d32tnuo1sla34.amplifyapp.com/capture">Try the demo →</a>
+      <a class="btn btn-amber" href="https://aws.d32tnuo1sla34.amplifyapp.com/vault">Log in →</a>
+      <a class="btn btn-ghost" href="#demo" data-play>▶ Watch the demo</a>
     </div>
   </div>
 </section>
@@ -286,5 +317,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </footer>
 
+<script>
+// "Watch the demo" links scroll to the player and start it; chapter buttons jump within it.
+(function(){
+  var v=document.getElementById('demo-video');
+  if(!v) return;
+  function play(t){ if(typeof t==='number') v.currentTime=t; var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+  document.querySelectorAll('[data-play]').forEach(function(a){
+    a.addEventListener('click',function(e){ e.preventDefault(); document.getElementById('demo').scrollIntoView({behavior:'smooth'}); play(); });
+  });
+  document.querySelectorAll('.chapters [data-t]').forEach(function(b){
+    b.addEventListener('click',function(){ play(Number(b.getAttribute('data-t'))); });
+  });
+})();
+</script>
 </body>
 </html>
